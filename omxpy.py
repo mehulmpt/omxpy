@@ -31,12 +31,17 @@ class omxpy(object):
             if index != 0:
             	#kill scripts, etc.
                 self._process.kill(0)
+                
+    def kickstart(self, cmd):
+        self._process = pexpect.spawn(cmd)
+        self._process.interact() # remove this in production
         
     def __init__(self, filepath):
 
         cmd = self._LAUNCH_CMD % (filepath)
         
         Thread(target=self.killchild, args=()).start()
+        Thread(target=self.kickstart, args=(cmd,))
 
     def jump30s(self):
         self._process.send(self._JUMP_30SEC)
