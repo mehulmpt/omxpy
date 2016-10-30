@@ -54,19 +54,19 @@ class omxpy(object):
         self._process.send(self._PAUSE_CMD)
 
     def toggle_subtitles(self):
-        self._process.send(self._TOGGLE_SUB_CMD):
+        self._process.send(self._TOGGLE_SUB_CMD)
 
     def fastf(self):
-        self._process.send(self._FORWARD_):
+        self._process.send(self._FORWARD_)
 
     def rewind(self):
-        self._process.send(self._REWIND_):
+        self._process.send(self._REWIND_)
 
     def delaysub(self):
-        self._process.send(self._DELAYSUB_):
+        self._process.send(self._DELAYSUB_)
 
     def fastsub(self):
-        self._process.send(self._FASTSUB_):
+        self._process.send(self._FASTSUB_)
 
     def stop(self):
         self._process.send(self._QUIT_CMD)
