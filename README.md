@@ -9,7 +9,7 @@ omxpy makes it easier to use omxplayer with remote python script control. It req
 from omxpy import omxpy
 
 #... after some code
-omx = OMXPlayer("./Movies/movie.mp4")
+omx = omxpy("./Movies/movie.mp4")
 omx.toggle_pause()
 omx.jump30s()
 # ...
