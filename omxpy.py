@@ -40,8 +40,9 @@ class omxpy(object):
 
         cmd = self._LAUNCH_CMD % (filepath)
         
+        Thread(target=self.kickstart, args=(cmd,)).start()
         Thread(target=self.killchild, args=()).start()
-        Thread(target=self.kickstart, args=(cmd,))
+        
 
     def jump30s(self):
         self._process.send(self._JUMP_30SEC)
